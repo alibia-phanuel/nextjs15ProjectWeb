@@ -51,14 +51,14 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
             </Link>
             <p className="category-tag">{post.category}</p>
           </div>
-          <h3 className="text-30-bold">Pitch Details</h3>
+          <h3 className="text-30-bold">Détails de l&apos;emplacement</h3>
           {parsedContent ? (
             <article
               className="prose max-w-4xl font-work-sans break-all"
               dangerouslySetInnerHTML={{ __html: parsedContent }}
             />
           ) : (
-            <p className="no-result">No details provided</p>
+            <p className="no-result">Aucun détail n&apos;a été fourni</p>
           )}
         </div>
         <hr className="divider" />

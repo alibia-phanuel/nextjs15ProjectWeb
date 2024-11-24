@@ -36,7 +36,7 @@ const StartupForm = () => {
       if (result.status == "SUCCESS") {
         toast({
           title: "Success",
-          description: "Your startup pitch has been created successfully",
+          description: "Votre pitch de startup a été créé avec succès",
         });
 
         router.push(`/startup/${result._id}`);
@@ -51,7 +51,7 @@ const StartupForm = () => {
 
         toast({
           title: "Error",
-          description: "Please check your inputs and try again",
+          description: "Veuillez vérifier vos entrées et réessayer",
           variant: "destructive",
         });
 
@@ -60,13 +60,13 @@ const StartupForm = () => {
 
       toast({
         title: "Error",
-        description: "An unexpected error has occurred",
+        description: "Une erreur inattendue s'est produite",
         variant: "destructive",
       });
 
       return {
         ...prevState,
-        error: "An unexpected error has occurred",
+        error: "Une erreur inattendue s'est produite",
         status: "ERROR",
       };
     }
@@ -79,14 +79,14 @@ const StartupForm = () => {
     <form action={formAction} className="startup-form">
       <div>
         <label htmlFor="title" className="startup-form_label">
-          Title
+          Titre
         </label>
         <Input
           id="title"
           name="title"
           className="startup-form_input"
           required
-          placeholder="Startup Title"
+          placeholder="Titre de la startup"
         />
         {errors.title && <p className="startup-form_error">{errors.title}</p>}
       </div>
@@ -99,7 +99,7 @@ const StartupForm = () => {
           name="description"
           className="startup-form_textarea"
           required
-          placeholder="Startup Description"
+          placeholder="Description de la startup"
         />
 
         {errors.description && (
@@ -109,14 +109,14 @@ const StartupForm = () => {
 
       <div>
         <label htmlFor="category" className="startup-form_label">
-          Category
+          Catégorie
         </label>
         <Input
           id="category"
           name="category"
           className="startup-form_input"
           required
-          placeholder="Startup Category (Tech, Health, Education...)"
+          placeholder="Catégorie de startup (technologie, santé, éducation...)"
         />
 
         {errors.category && (
@@ -126,7 +126,7 @@ const StartupForm = () => {
 
       <div>
         <label htmlFor="link" className="startup-form_label">
-          Image URL
+          URL de l&apos;image
         </label>
         <Input
           id="link"
@@ -153,7 +153,7 @@ const StartupForm = () => {
           style={{ borderRadius: 20, overflow: "hidden" }}
           textareaProps={{
             placeholder:
-              "Briefly describe your idea and what problem it solves",
+              "Décrivez brièvement votre idée et le problème qu'elle résout",
           }}
           previewOptions={{
             disallowedElements: ["style"],
@@ -167,7 +167,7 @@ const StartupForm = () => {
         className="startup-form_btn text-white"
         disabled={isPending}
       >
-        {isPending ? "Submitting..." : "Submit Your Pitch"}
+        {isPending ? "Soumission..." : "Soumettez votre pitch"}
         <Send className="size-6 ml-2" />
       </Button>
     </form>

@@ -21,17 +21,20 @@ export default async function Home({
     <>
       <section className="pink_container">
         <h1 className="heading">
-          Pitch Your Startup, <br />
-          Connect With Entrepreneurs
+          Présentez votre startup,
+          <br />
+          rencontrez des entrepreneurs
         </h1>
         <p className="sub-heading !max-w-3xl">
-          Submit Ideas, Vote on Pitches, and Get Noticed in Virtual
-          Competitions.
+          Soumettez des idées, votez sur des projets et faites-vous remarquer
+          dans le cadre de concours virtuels. virtuels.
         </p>
         <SearchForm query={query} />
       </section>
       <section className="section_container">
-        {query ? `Search results for "${query}"` : "All Startups"}
+        {query
+          ? `Résultats de la recherche pour "${query}"`
+          : "Toutes les startups"}
 
         <ul className="mt-7 card_grid">
           {posts?.length > 0 ? (
@@ -39,7 +42,7 @@ export default async function Home({
               <StartupCard key={post?._id} post={post} />
             ))
           ) : (
-            <li className="no-results">No startups found</li>
+            <li className="no-results">Aucune startup trouvée </li>
           )}
         </ul>
       </section>
